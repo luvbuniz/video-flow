@@ -60,24 +60,24 @@ stage can be re-run without redoing the whole video.
 - **How:** ElevenLabs — a consistent, friendly narrator voice. ~1 min/day of
   speech fits their $5/mo Starter plan; the $22/mo Creator plan gives headroom.
 
-### 6. Assembly + captions — fully free, open-source stack
+### 6. Assembly + captions — [browser-use/video-use](https://github.com/browser-use/video-use)
 - **What:** Stitch clips, lay in voiceover + background music, burn in animated
   word-by-word captions (essential for sound-off viewing), export 9:16 1080×1920.
-- **Render engine: FFmpeg** ($0) — concatenates clips, mixes narration over
-  music with ducking, scales/pads to 9:16.
-- **Caption timing: faster-whisper** ($0, open source) — transcribes the
-  voiceover with word-level timestamps.
-- **Caption styling: ASS subtitles (libass)** ($0) — FFmpeg burns in
-  TikTok-style karaoke captions (word-by-word pop, outline, positioning)
-  from a generated `.ass` file. Fully deterministic, same look every day.
-- **Optional hand-polish (CapCut replacement): Kdenlive** ($0, open source).
-  The pipeline can emit an MLT XML project file alongside the final MP4 —
-  open it in Kdenlive to tweak any cut by hand, or render it headlessly with
-  the `melt` CLI. Same "editable draft" idea as a CapCut draft, zero cost,
-  no API problems.
-- **Prior art to borrow from:** open-source short-video pipelines like
-  ShortGPT and MoneyPrinterTurbo (script → TTS → captions → FFmpeg) prove
-  this exact stack out.
+- **Engine: `video-use`** (MIT license, ~16k stars) — an open-source agent
+  skill that edits video through Claude Code. FFmpeg renders under the hood;
+  the agent plans the cut from word-level transcripts, burns in styled
+  subtitles (uppercase 2-word chunks — TikTok style — configurable), adds
+  audio fades at every cut, and **self-evaluates the render** (up to 3
+  re-render passes) before delivering `edit/final.mp4`.
+- **Math bonus:** it can synthesize animation overlays via **Manim** — the
+  math-animation library behind 3Blue1Brown — so equations, number lines, and
+  counting animations can be layered onto scenes. Also supports Remotion and
+  PIL overlays.
+- **Transcription:** uses the ElevenLabs Scribe API for word timestamps —
+  same ElevenLabs account as our voiceover stage, pennies per video.
+- **Fallback / polish:** raw FFmpeg + ASS caption scripts if we ever need a
+  fully deterministic path, and optional Kdenlive (free, open source) project
+  export for hand-editing a cut.
 - Music: royalty-free library (Pixabay/YouTube Audio Library, $0) — or add
   trending platform audio manually at post time.
 

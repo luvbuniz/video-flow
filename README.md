@@ -60,16 +60,24 @@ stage can be re-run without redoing the whole video.
 - **How:** ElevenLabs — a consistent, friendly narrator voice. ~1 min/day of
   speech fits their $5/mo Starter plan; the $22/mo Creator plan gives headroom.
 
-### 6. Assembly + captions
+### 6. Assembly + captions — fully free, open-source stack
 - **What:** Stitch clips, lay in voiceover + background music, burn in animated
   word-by-word captions (essential for sound-off viewing), export 9:16 1080×1920.
-- **How (automated, $0):** FFmpeg + Whisper for caption timing — fully scripted.
-- **CapCut reality check:** CapCut has **no public API** for automated editing.
-  Two workable options:
-  1. **`cutcli`** — generates an *editable CapCut draft* from code. The pipeline
-     does the rough cut; you open CapCut only for optional hand-polish.
-  2. Skip CapCut entirely and let FFmpeg render the final MP4 (recommended once
-     you trust the output).
+- **Render engine: FFmpeg** ($0) — concatenates clips, mixes narration over
+  music with ducking, scales/pads to 9:16.
+- **Caption timing: faster-whisper** ($0, open source) — transcribes the
+  voiceover with word-level timestamps.
+- **Caption styling: ASS subtitles (libass)** ($0) — FFmpeg burns in
+  TikTok-style karaoke captions (word-by-word pop, outline, positioning)
+  from a generated `.ass` file. Fully deterministic, same look every day.
+- **Optional hand-polish (CapCut replacement): Kdenlive** ($0, open source).
+  The pipeline can emit an MLT XML project file alongside the final MP4 —
+  open it in Kdenlive to tweak any cut by hand, or render it headlessly with
+  the `melt` CLI. Same "editable draft" idea as a CapCut draft, zero cost,
+  no API problems.
+- **Prior art to borrow from:** open-source short-video pipelines like
+  ShortGPT and MoneyPrinterTurbo (script → TTS → captions → FFmpeg) prove
+  this exact stack out.
 - Music: royalty-free library (Pixabay/YouTube Audio Library, $0) — or add
   trending platform audio manually at post time.
 
@@ -117,7 +125,7 @@ worth extra polish.
 
 - [ ] v0.1 — Pipeline scripts: idea scout → script → images → clips → FFmpeg cut
 - [ ] v0.2 — Caption burn-in (Whisper) + post-kit generation
-- [ ] v0.3 — Optional CapCut draft export via cutcli for hand-polish
+- [ ] v0.3 — Optional Kdenlive/MLT project export for hand-polish
 - [ ] v0.4 — Daily scheduled run (cron) with human approve/reject step
 - [ ] v1.0 — Auto-posting via Meta Graph API + TikTok Content Posting API
 

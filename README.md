@@ -121,6 +121,34 @@ model is the only line that really moves the bill — everything else rounds to
 pocket change. Upgrade individual "hero" videos to Veo when one concept is
 worth extra polish.
 
+### Subscription option — 4 cartoons/week (~17/month)
+
+Subscriptions are cheaper per second than pay-as-you-go APIs, at the cost of
+some automation. Recommended stack (prices as of Sept 2026, monthly billing):
+
+| Need | Pick | Cost/mo |
+|---|---|---|
+| Images + video, many models, **official MCP** | **OpenArt Plus** (12,000 credits; Pro 24,000 at $56 if burn is high; +5,000 credits for $15) | $34 |
+| Voiceover + caption transcription | ElevenLabs Starter | $5 |
+| Editing | video-use + FFmpeg | $0 |
+| **Total** | | **≈ $40–60 → ~$2.50–3.50 per cartoon** |
+
+Why OpenArt: one credit pool covers images (Nano Banana, GPT Image 2) *and*
+video (Seedance 2.0, Kling 3 Omni, Wan, MiniMax), so models can be A/B tested
+without extra subscriptions, and its MCP server (`https://mcp.openart.ai/mcp`,
+OAuth sign-in, no API keys) lets Claude generate directly.
+
+Alternatives: **Kling Pro** (~$33, 3,000 credits — best cheap cartoon motion,
+single model); **Dreamina** ($18 — cheapest direct Seedance, manual web UI only);
+**Hailuo/MiniMax Standard** ($10 — note failed generations still burn credits).
+Avoid **Higgsfield**: documented complaints about capped "unlimited" plans,
+early renewal charges, and a no-refund-once-used policy.
+
+**Credit-saving technique — limited animation:** animate only the 4–6 key
+beats of each cartoon; the rest use still keyframes with slow zoom/pan
+(free, done at edit time). Roughly halves video credits with little quality loss.
+Batch all 4 weekly cartoons in one production session.
+
 ## Roadmap
 
 - [ ] v0.1 — Pipeline scripts: idea scout → script → images → clips → FFmpeg cut

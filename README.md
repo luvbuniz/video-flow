@@ -129,24 +129,31 @@ stack (prices as of Sept 2026, monthly billing):
 
 | Need | Pick | Cost/mo |
 |---|---|---|
-| Images + video, many models, **official MCP** | **OpenArt Starter** (4,000 credits, ~50 short clips) | $14 |
-| Voiceover + caption transcription (commercial license) | ElevenLabs Starter | $5 |
+| Images, video, voiceover, music, sound effects, lip sync — **commercial rights + official MCP** | **OpenArt Plus** (12,000 credits) | $34 |
+| Caption transcription for video-use | ElevenLabs free account (or faster-whisper locally) | $0 |
 | Editing | video-use + FFmpeg | $0 |
-| **Total** | | **≈ $19 → ~$5 per cartoon** |
+| **Total** | | **≈ $34 → ~$8.50 per cartoon** |
 
-If Starter runs short (e.g. heavy Seedance use), step up to OpenArt Plus
-($34, 12,000 credits) — the $15 extra-credit add-on requires Plus. Plus is
-also the right tier if volume grows to ~4 cartoons/week (~$40–60/month total).
+**Why Plus, not Starter:** OpenArt's $14 Starter plan does not list commercial
+use rights; Plus, Pro, and Wonder do. These videos promote Stackadoo, so
+commercial rights are required. Plus's 12,000 credits are far more than
+4 cartoons need, leaving room to test models or scale to ~4/week.
 
-Why OpenArt: one credit pool covers images (Nano Banana, GPT Image 2) *and*
-video (Seedance 2.0, Kling 3 Omni, Wan, MiniMax), so models can be A/B tested
-without extra subscriptions, and its MCP server (`https://mcp.openart.ai/mcp`,
-OAuth sign-in, no API keys) lets Claude generate directly.
+Why OpenArt: one credit pool covers images (Nano Banana, GPT Image 2), video
+(Seedance 2.0, Kling 3 Omni, Wan, MiniMax), **and audio** — ElevenLabs-powered
+text-to-speech (~5 credits per generation), voice clone/changer, music, sound
+effects, and lip sync. Seedance 2.0, Kling 3 Omni, and Veo 3.1 can also
+generate dialogue + sound effects inside the clip in one pass. Models can be
+A/B tested without extra subscriptions, and its MCP server
+(`https://mcp.openart.ai/mcp`, OAuth sign-in, no API keys) lets Claude
+generate directly.
 
-Alternatives: **Kling Standard** ($8.80, 660 credits — cheapest, single model,
-may be tight; Pro ~$33 for 3,000); **Dreamina** ($18 — cheapest direct Seedance,
-manual web UI only);
-**Hailuo/MiniMax Standard** ($10 — note failed generations still burn credits).
+Cheaper, commercially safe alternative (~$15/month, no MCP, one video model,
+more manual work): **Hailuo/MiniMax Standard** ($10 — paid plans include
+commercial rights; failed generations still burn credits) + **ElevenLabs
+Starter** ($5, commercial license) for the voice. Other options: **Kling**
+Standard ($8.80, 660 credits — check its commercial terms) or **Dreamina**
+($18 — cheapest direct Seedance, manual web UI only).
 Avoid **Higgsfield**: documented complaints about capped "unlimited" plans,
 early renewal charges, and a no-refund-once-used policy.
 

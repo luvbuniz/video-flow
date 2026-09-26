@@ -121,25 +121,31 @@ model is the only line that really moves the bill — everything else rounds to
 pocket change. Upgrade individual "hero" videos to Veo when one concept is
 worth extra polish.
 
-### Subscription option — 4 cartoons/week (~17/month)
+### Subscription option — 4 cartoons/month (current plan)
 
-Subscriptions are cheaper per second than pay-as-you-go APIs, at the cost of
-some automation. Recommended stack (prices as of Sept 2026, monthly billing):
+At 4 cartoons/month we need roughly 25–60 video clips a month (6–15 per
+cartoon including retries, depending on how much is animated). Recommended
+stack (prices as of Sept 2026, monthly billing):
 
 | Need | Pick | Cost/mo |
 |---|---|---|
-| Images + video, many models, **official MCP** | **OpenArt Plus** (12,000 credits; Pro 24,000 at $56 if burn is high; +5,000 credits for $15) | $34 |
-| Voiceover + caption transcription | ElevenLabs Starter | $5 |
+| Images + video, many models, **official MCP** | **OpenArt Starter** (4,000 credits, ~50 short clips) | $14 |
+| Voiceover + caption transcription (commercial license) | ElevenLabs Starter | $5 |
 | Editing | video-use + FFmpeg | $0 |
-| **Total** | | **≈ $40–60 → ~$2.50–3.50 per cartoon** |
+| **Total** | | **≈ $19 → ~$5 per cartoon** |
+
+If Starter runs short (e.g. heavy Seedance use), step up to OpenArt Plus
+($34, 12,000 credits) — the $15 extra-credit add-on requires Plus. Plus is
+also the right tier if volume grows to ~4 cartoons/week (~$40–60/month total).
 
 Why OpenArt: one credit pool covers images (Nano Banana, GPT Image 2) *and*
 video (Seedance 2.0, Kling 3 Omni, Wan, MiniMax), so models can be A/B tested
 without extra subscriptions, and its MCP server (`https://mcp.openart.ai/mcp`,
 OAuth sign-in, no API keys) lets Claude generate directly.
 
-Alternatives: **Kling Pro** (~$33, 3,000 credits — best cheap cartoon motion,
-single model); **Dreamina** ($18 — cheapest direct Seedance, manual web UI only);
+Alternatives: **Kling Standard** ($8.80, 660 credits — cheapest, single model,
+may be tight; Pro ~$33 for 3,000); **Dreamina** ($18 — cheapest direct Seedance,
+manual web UI only);
 **Hailuo/MiniMax Standard** ($10 — note failed generations still burn credits).
 Avoid **Higgsfield**: documented complaints about capped "unlimited" plans,
 early renewal charges, and a no-refund-once-used policy.
